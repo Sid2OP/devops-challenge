@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: Sid2op/devops-challenge:latest  # updated by CI
+        image: YOUR_DOCKERHUB_USERNAME/devops-challenge:latest  # updated by CI
         ports:
         - containerPort: 5000
         envFrom:
