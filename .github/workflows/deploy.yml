@@ -49,11 +49,7 @@ jobs:
           mkdir -p ~/.kube
           echo "${{ secrets.KUBECONFIG }}" > ~/.kube/config
 
-      - name: Set up kubeconfig
-        run: |
-          mkdir -p ~/.kube
-          cp /home/sid/.kube/config ~/.kube/config   # ← change sid to your username
-
+      
       - name: Verify cluster reachable
         run: |
           kubectl cluster-info
