@@ -2,8 +2,7 @@
 name: Build and Deploy to Kubernetes
 
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 env:
   IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/devops-challenge
