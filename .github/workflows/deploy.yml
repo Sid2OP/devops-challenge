@@ -47,18 +47,11 @@ jobs:
       - name: Set up kubeconfig
         run: |
           mkdir -p ~/.kube
-          echo "${{ secrets.KUBECONFIG }}" base64 -d > ~/.kube/config
-
-      
-      - name: Verify cluster reachable
-        run: |
-          kubectl cluster-info
-          kubectl get nodes
+          echo "${{ secrets.KUBECONFIG }}" | base64 -d > ~/.kube/config
 
       - name: Deploy to Kubernetes
         run: |
-          mkdir -p ~/.kube
-          echo "${{ secrets.KUBECONFIG }}" | base64 -d > ~/.kube/config
+          
           # ↑ decode it first before writing
           kubectl apply -f k8s/
           # Update image to the specific SHA tag (not just latest)
