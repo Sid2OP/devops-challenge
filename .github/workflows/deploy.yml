@@ -36,8 +36,9 @@ jobs:
           tags: |
             ${{ env.IMAGE }}:latest
             ${{ env.IMAGE }}:${{ steps.tag.outputs.tag }}
-            
+
   deploy:
+    needs: build-and-push
     runs-on: self-hosted
 
     steps:
