@@ -1,0 +1,9 @@
+# k8s/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: capstone
+data:
+  DB_HOST: "mysql-0.mysql.capstone.svc.cluster.local"
+  DB_NAME: "challengedb"
