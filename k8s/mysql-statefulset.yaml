@@ -35,13 +35,19 @@ spec:
           mountPath: /var/lib/mysql
         livenessProbe:
           exec:
-            command: ["mysqladmin", "ping", "-h", "localhost"]
+            command: 
+              - sh
+              - -c
+              - mysqladmin ping -h localhost -uroot -p$MYSQL_ROOT_PASSWORD
           initialDelaySeconds: 30
           periodSeconds: 10
           failureThreshold: 3
         readinessProbe:
           exec:
-            command: ["mysql", "-u", "root", "-prootpassword123", "-e", "SELECT 1"]
+            command:
+              - sh
+              - -c
+              - mysqladmin ping -h localhost -uroot -p$MYSQL_ROOT_PASSWORD
           initialDelaySeconds: 30
           periodSeconds: 10
   volumeClaimTemplates:
