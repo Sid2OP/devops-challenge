@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: YOUR_DOCKERHUB_USERNAME/devops-challenge:latest  # updated by CI
+        image: YOUR_DOCKERHUB_USERNAME/devops-challenge:latest 
         ports:
         - containerPort: 5000
         envFrom:
@@ -40,7 +40,7 @@ spec:
           limits:
             cpu: 300m
             memory: 256Mi
-        readinessProbe:           # YOUR RELIABILITY IMPROVEMENT
+        readinessProbe:           
           httpGet:
             path: /health
             port: 5000
