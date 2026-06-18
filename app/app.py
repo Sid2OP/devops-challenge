@@ -22,7 +22,7 @@ def health():
     return "OK", 200
 
 @app.route("/ready")
-def health():
+def ready():
     try:
         conn = mysql.connector.connect(
             host=os.getenv("DB_HOST"),
