@@ -5,5 +5,5 @@ metadata:
   name: app-config
   namespace: capstone
 data:
-  DB_HOST: "mysql-WRONG.mysql.capstone.svc.cluster.local"
+  DB_HOST: "mysql-0.mysql.capstone.svc.cluster.local"
   DB_NAME: "challengedb"
