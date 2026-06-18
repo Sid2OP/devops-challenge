@@ -42,9 +42,9 @@ spec:
             memory: 256Mi
         readinessProbe:           
           httpGet:
-            path: /health
+            path: /ready
             port: 5000
-          initialDelaySeconds: 10
+          initialDelaySeconds: 20
           periodSeconds: 5
           failureThreshold: 3
         livenessProbe:
