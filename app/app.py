@@ -31,7 +31,7 @@ def ready():
             database=os.getenv("DB_NAME")
         )
         conn.close()
-        return "OK", 200
+        return jsonify({"status": "OK", "service": "Ready"})
 
     except Exception as e:
         return str(e), 500
