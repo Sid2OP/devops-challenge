@@ -41,6 +41,7 @@ spec:
               - mysqladmin ping -h localhost -uroot -p$MYSQL_ROOT_PASSWORD
           initialDelaySeconds: 30
           periodSeconds: 10
+          timeoutSeconds: 5
           failureThreshold: 3
         readinessProbe:
           exec:
@@ -50,6 +51,7 @@ spec:
               - mysqladmin ping -h localhost -uroot -p$MYSQL_ROOT_PASSWORD
           initialDelaySeconds: 30
           periodSeconds: 10
+          timeoutSeconds: 5
   volumeClaimTemplates:
   - metadata:
       name: mysql-data
